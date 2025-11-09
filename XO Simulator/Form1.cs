@@ -12,7 +12,7 @@ namespace XO_Simulator
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(GetRationsLabel());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -22,7 +22,12 @@ namespace XO_Simulator
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            label1.Text = $"Budget: {budget:N0}";
+            label1.Text = $"Budget: {budget:N0}"; //This updates the text of the label each time the button is pressed.  The 'N0' allows us to use currency formatting without wasting space
+                                                  // on the cents, simply because there's no real use for them as all numbers used here are whole numbers.
+            budget -= supplyCost; //The '-=' and then the variable being subtracted from the one we're updating is shorthand, and while it was initially
+                                  //going to be 'budget = budget - supplyCost;', I wanted to practice this technique to hopefully shave a few seconds off my coding speed in the future a
         }
+
+        
     }
 }
